@@ -1,1 +1,5 @@
 **/environments/
+**.terraform
+**/*.terraform.*
+**/terraform.tfstate*
+*plan.out

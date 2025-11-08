@@ -1,4 +1,4 @@
-resource "digitalocean_kubernetes_cluster" "this" {
+resource "digitalocean_kubernetes_cluster" "cluster" {
   name   = var.kubernetes_cluster_name
   region = var.kubernetes_cluster_region
   version = var.kubernetes_cluster_version
