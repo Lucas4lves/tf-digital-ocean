@@ -12,3 +12,8 @@ variable "vpc_region" {
   type = string
   default = ""
 }
+
+variable "vpc_description" {
+  type = string
+  default = ""
+}
