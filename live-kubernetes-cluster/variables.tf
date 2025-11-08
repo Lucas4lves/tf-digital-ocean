@@ -1,39 +1,43 @@
-variable "digital_ocean_do_token" {
+variable "digital_ocean_project_name" {
   type = string
+  default = ""
+}
+variable "digital_ocean_do_token" {
+  type    = string
+  default = ""
+}
+
+variable "digital_ocean_project_environment" {
+  type    = string
   default = ""
 }
 
 variable "kubernetes_cluster_name" {
-  type = string
+  type    = string
   default = ""
 }
 
 variable "digital_ocean_region" {
-  type = string
+  type    = string
   default = "ny1"
 }
 
 variable "kubernetes_cluster_version" {
-  type = string
+  type    = string
   default = "latest"
 }
 
 variable "kubernetes_cluster_worker_pool_name" {
-  type = string
+  type    = string
   default = "worker_pool"
 }
 
 variable "kubernetes_cluster_worker_pool_vmsize" {
-  type = string
+  type    = string
   default = ""
 }
 
 variable "kubernetes_cluster_worker_pool_node_count" {
-  type = number
+  type    = number
   default = 1
-}
-
-variable "digital_ocean_do_token" {
-  type = string
-  default = ""
 }
