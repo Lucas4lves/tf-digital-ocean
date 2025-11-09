@@ -17,3 +17,8 @@ variable "vpc_description" {
   type = string
   default = ""
 }
+
+variable "digital_ocean_do_token" {
+  type = string
+  default = ""
+}
