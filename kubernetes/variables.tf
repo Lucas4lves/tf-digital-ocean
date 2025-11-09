@@ -32,3 +32,8 @@ variable "digital_ocean_do_token" {
   type = string
   default = ""
 }
+
+variable "kubernetes_cluster_vpc_uuid" {
+  type = string
+  default = ""
+}

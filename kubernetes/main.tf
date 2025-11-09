@@ -8,4 +8,6 @@ resource "digitalocean_kubernetes_cluster" "cluster" {
     size       = var.kubernetes_cluster_worker_pool_vmsize
     node_count = var.kubernetes_cluster_worker_pool_node_count
   }
+  
+  vpc_uuid = var.kubernetes_cluster_vpc_uuid
 }

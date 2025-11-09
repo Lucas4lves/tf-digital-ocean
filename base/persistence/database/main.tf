@@ -1,6 +1,6 @@
 resource "digitalocean_database_db" "db" {
-  cluster_id = digitalocean_database_cluster.postgres-example.id
-  name       = var.db_instance_name
+  cluster_id = digitalocean_database_cluster.cluster.id
+  name       = var.database_instance_name
 }
 
 resource "digitalocean_database_cluster" "cluster" {
@@ -10,4 +10,7 @@ resource "digitalocean_database_cluster" "cluster" {
   size       = var.database_cluster_vm_size
   region     = var.database_cluster_region
   node_count = var.database_cluster_node_count
+
+  private_network_uuid = var.vpc_uuid
+  project_id = var.database_cluster_project_id
 }

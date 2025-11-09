@@ -1,4 +1,4 @@
 output "vpc_uuid" {
-  value = digitalocean_vpc.this.urn
+  value = digitalocean_vpc.this.id
   description = "VPC unique identifier"
 }
