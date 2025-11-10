@@ -6,3 +6,7 @@ terraform {
     }
   }
 }
+
+provider "digitalocean" {
+  token = var.digital_ocean_do_token
+}

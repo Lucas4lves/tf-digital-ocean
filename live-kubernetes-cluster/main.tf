@@ -25,6 +25,17 @@ module "digital_ocean_vpc" {
   digital_ocean_do_token = var.digital_ocean_do_token
 }
 
+module "bastion_server" {
+  source           = "../compute/droplet"
+  droplet_image    = var.droplet_image
+  droplet_name     = var.droplet_name
+  droplet_region   = var.digital_ocean_region
+  droplet_size     = var.droplet_size
+  droplet_ssh_keys = var.droplet_ssh_keys
+
+  vpc_uuid = var.vpc_uuid
+}
+
 module "digital_ocean_database_cluster" {
   source                          = "../base/persistence/database"
   database_instance_name          = var.database_instance_name
