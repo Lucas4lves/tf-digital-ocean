@@ -1,3 +1,8 @@
+# Data resources
+data "digitalocean_vpc" "bastion_vpc" {
+  name = var.vpc_name
+}
+
 resource "digitalocean_project" "this" {
   name = var.project_name
   environment = var.project_environment
@@ -17,13 +22,7 @@ module "bastion_server" {
   droplet_region   = var.droplet_region
   droplet_size     = var.droplet_size
   local_pub_key_path = var.local_pub_key_path
-  
-  droplet_ssh_keys = var.droplet_ssh_keys
-  own_vpc          = var.own_vpc
-
   own_ssh = var.own_ssh
-  vpc_name = var.vpc_name
-  vpc_uuid = var.vpc_uuid
-  vpc_ip_range = var.vpc_ip_range
-  vpc_region = var.droplet_region
+  droplet_ssh_keys = var.droplet_ssh_keys
+  vpc_uuid = data.digitalocean_vpc.bastion_vpc.id
 }

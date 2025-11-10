@@ -28,39 +28,9 @@ variable "droplet_ssh_keys" {
   default = [ "" ]
 }
 
-variable "own_vpc" {
-  type = bool
-  default = false
-}
-
 variable "own_ssh" {
   type = bool
   default = true
-}
-
-variable "vpc_name" {
-  type = string
-  default = ""
-}
-
-variable "vpc_ip_range" {
- type = string
- default = "10.10.10.0/24"
-}
-
-variable "vpc_region" {
-  type = string
-  default = ""
-}
-
-variable "vpc_description" {
-  type = string
-  default = ""
-}
-
-variable "digital_ocean_do_token" {
-  type = string
-  default = ""
 }
 
 variable "local_pub_key_path" {

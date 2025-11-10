@@ -3,4 +3,4 @@
 **/*.terraform.*
 **/terraform.tfstate*
 *plan.out
-**/**/*.tfvars
+**/*.tfvars
