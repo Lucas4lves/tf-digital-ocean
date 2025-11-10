@@ -26,3 +26,11 @@ module "bastion_server" {
   droplet_ssh_keys = var.droplet_ssh_keys
   vpc_uuid = data.digitalocean_vpc.bastion_vpc.id
 }
+
+module "bastion_firewall" {
+  source = "../base/networking/cloud-firewall"
+  droplet_ids = [module.bastion_server.droplet_id]
+  cloud_firewall_name = var.cloud_firewall_name
+  inbound_rules_config = var.inbound_rules_config
+  outbound_rules_config = var.outbound_rules_config
+}
